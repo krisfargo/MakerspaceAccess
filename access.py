@@ -3,7 +3,9 @@ import time
 import sys
 import mysql.connector
 
-cnx = mysql.connector.connect(host='makerspace.unh.edu', user='rfid', password='b72794b1282c70d3658edd5068373fc8', database='database')
+passwordIn = getpass.getpass("Enter database password: ")
+
+cnx = mysql.connector.connect(host='makerspace.unh.edu', user='rfid', password=passwordIn, database='database')
 cursor = cnx.cursor()
 
 testVar = input("Enter tag ID: ")
