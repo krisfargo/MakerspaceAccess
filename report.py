@@ -10,7 +10,7 @@ cursor = cnx.cursor()
 
 cursor.execute("SELECT timestamp, user, affiliation FROM accessLog WHERE WEEKOFYEAR(timestamp)=WEEKOFYEAR(NOW())")
 
-f = open(sys.argv[1], 'wt')
+f = open(sys.argv[1], 'wt', newline='')
 try:
 	writer = csv.writer(f)
 	writer.writerow( ('Timestamp', 'User', 'Affiliation') )
